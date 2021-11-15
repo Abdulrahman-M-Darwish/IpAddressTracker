@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 99;
+}
+
+#map {
+  flex: 1;
+  z-index: -1;
+}
+
+.search {
+  background-image: url("./../images/pattern-bg.png");
+  background-size: cover;
+  padding: 24px 24px 0;
+  transition: 0.5s;
+  @media (min-width: 576px) {
+    padding: 24px 96px 0;
+  }
+  @media (min-width: 768px) {
+    padding: 24px 165px 0;
+  }
+  h1 {
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+  form {
+    display: flex;
+    max-width: 550px;
+    height: 55px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 0 auto;
+    input,
+    button {
+      height: 100%;
+      border: none;
+      outline: none;
+    }
+    input {
+      flex: 1;
+      padding: 0 24px;
+      font-size: 18px;
+    }
+    button {
+      width: 50px;
+      background-color: hsl(0, 0%, 17%);
+    }
+  }
+  ul {
+    list-style: none;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 14px 32px;
+    border-radius: 16px;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+    @media (min-width: 768px) {
+      justify-content: space-between;
+      text-align: left;
+      padding: 32px;
+    }
+    li {
+      position: relative;
+      &:not(:first-of-type)::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -32px;
+        width: 1px;
+        height: 100%;
+        background-color: rgba(240, 240, 240, 1);
+        display: none;
+        @media (min-width: 768px) {
+          display: block;
+        }
+      }
+      .title {
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        color: hsl(0, 0%, 59%);
+      }
+      .info {
+        font-size: 1.3em;
+        font-weight: 500;
+        color: hsl(0, 0%, 17%);
+        @media (min-width: 576px) {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+}
+
+.close {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &::after {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    content: "";
+    border: 5px solid;
+    border-color: hsl(0, 93%, 37%) transparent hsl(0, 93%, 37%) transparent;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  svg {
+    transform: rotate(90deg);
+    transition: 0.2s;
+  }
+  &.open {
+    svg {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

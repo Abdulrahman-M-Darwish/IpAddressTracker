@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <title>Frontend Mentor | IP Address Tracker</title>
+  </head>
+  <body>
+    <div class="app">
+      <section class="search">
+        <h1>IP Address Tracker</h1>
+        <form>
+          <input
+            class="input"
+            type="text"
+            placeholder="Search for any IP address or domain"
+          />
+          <button>
+            <img src="./images/icon-arrow.svg" alt="button submit" />
+          </button>
+        </form>
+        <ul>
+          <li>
+            <div class="title">ip address</div>
+            <div class="info ip">192.212.174.101</div>
+          </li>
+          <li>
+            <div class="title">location</div>
+            <div class="info location">Brooklyn, NY 10001</div>
+          </li>
+          <li>
+            <div class="title">timezone</div>
+            <div class="info time">UTC-05:00</div>
+          </li>
+          <li>
+            <div class="title">isp</div>
+            <div class="info isp">SpaceX Starlink</div>
+          </li>
+        </ul>
+      </section>
+      <div id="map"></div>
+      <div class="close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
+          <path
+            fill="none"
+            stroke="hsl(0, 93%, 37%)"
+            stroke-width="3"
+            d="M2 1l6 6-6 6"
+          />
+        </svg>
+      </div>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
